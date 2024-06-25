@@ -1,0 +1,521 @@
+header {
+  background: #08080867;
+  color: #fff;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3cm;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+    margin-top: 6cm;
+    margin-right: 1cm;
+}
+
+nav a:hover {
+  color: var(--theme-color);
+}
+
+/* CSS for the logo */
+.logo {
+    width: 110px; /* Adjust width as needed */
+    height: 60px;
+  margin-left: 1.5cm;
+}
+
+
+
+:root { 
+  --primary-color: #ff4757; 
+  --secodary-color:rgb(22, 31, 50); 
+  --white-color: #fff; 
+  --theme-color: #3498db;
+} 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+* { margin: 0; 
+  padding: 0; 
+} 
+
+*,::before,::after { 
+  box-sizing: border-box; 
+}
+
+
+
+ul { 
+  list-style: none; 
+} 
+
+a { 
+  text-decoration: none; 
+  vertical-align: middle; 
+  color: inherit; 
+} 
+
+body { 
+  font-family: "Poppins", sans-serif;
+  font-size: 16px; 
+  line-height: 1.8; 
+  font-weight: 400; 
+  color: var(--theme-color); 
+  background-color: var(--secodary-color);
+  background-image: url("./images/Untitled design.jpg");
+  padding-top: 3.5cm;
+}
+
+.site { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh;
+} 
+
+.container { 
+  max-width: 480px; 
+  width: 100%; 
+  padding: 0 2em;
+}
+
+nav { 
+  position: relative; 
+  display: flex; 
+  justify-content: flex-end; 
+  max-width: 480px; 
+  width: 100%; 
+  height: 500px;
+}
+
+nav .link {
+  width: 80px; /* Increase width */
+  height: 70px; /* Increase height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  margin-top: -30px; /* Adjust to keep it vertically centered */
+  left: 0;
+  cursor: pointer;
+  z-index: 99;
+  margin-left: -13cm;
+  transform: rotate(180deg);
+}
+
+nav .link i {
+  font-size: 45px; /* Increase the icon size */
+  transform: rotate(180deg);
+}
+
+
+nav .link::before {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-image: linear-gradient(to left, transparent 25%, var(--theme-color));
+  border-radius: 50% 0 0 50%;
+  transform: scale(2);
+  z-index: -2;
+}
+
+nav .link::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: black;
+  border-radius: 50% 0 0 50%;
+  transform: scale(2);
+  z-index: -1;
+  opacity: .5;
+  transition: opacity .3s
+}
+
+nav .link:hover::after {
+  opacity: .9;
+}
+
+nav .link .close,
+nav input:checked ~ label .menu {
+  display: none;
+}
+
+nav input:checked ~ label .close {
+  display: block;
+}
+
+nav ul.submenu {
+  position: absolute;
+  top: -23px;
+  right: 25em;
+  width: 500px; /* Increase width as needed */
+  height: 500px; /* Increase height as needed */
+  transform: rotate(90deg);
+  visibility: hidden;
+  transition: visibility .1s;
+  margin-top: 0.5cm;
+}
+
+nav > input:checked ~ ul {
+  visibility: inherit;
+}
+
+nav > input:checked ~ ul li {
+  transform: rotate(calc((-180deg / 8) * var(--item))) translateX(0); 
+  opacity: 1;
+} 
+
+nav ul.submenu li { 
+  --item: 1; 
+  position: absolute; 
+  width: 175px; 
+  height: 60px; 
+  transform: rotate(calc((-180deg / 8) * var(--item))) translateX(157px); 
+  transform-origin: right center;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: transform .7s, opacity .2s;
+}
+
+nav ul li:nth-child(2) {
+  --item: 2;
+}
+nav ul li:nth-child(3) { 
+  --item: 3; 
+}
+nav ul li:nth-child(4) { 
+  --item: 4; 
+}
+nav ul li:nth-child(5) {
+  --item: 5; 
+} 
+nav ul li:nth-child(6) {
+  --item: 6;
+}
+nav ul li:nth-child(7) {
+  --item: 7;
+}
+
+nav ul li a { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+}
+
+nav ul li a i {
+  font-size: 20px; 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  background-color: var(--theme-color); 
+  color: var(--white-color); 
+  border: 2px solid transparent;
+  transition: border .3s, background-color .35 
+}
+
+nav ul li a:hover i { 
+  background-color: transparent; 
+  border-color: var(--theme-color); 
+}
+
+nav ul li a span { 
+  position: absolute;
+  right: calc(100% + 1em); 
+  text-align: right; 
+  font-size: 13px; 
+  padding: 0 10px; 
+  border-radius: 25px; 
+  background-image: linear-gradient(to right, transparent 25%, var(--theme-color)); 
+  z-index: -1; 
+  transform: translateX(50px);
+  opacity: 0;
+  transition: color .3s, transform .3s .4s, opacity .2s .4s;
+
+}
+
+nav > input:checked ~ ul li a span {
+  transform: translateX(0);
+  transform: rotate(174deg);
+}
+
+nav ul li a span::before{
+  content: '';
+  position: absolute; 
+  top: 2px; 
+  left: 2px; 
+  width: calc(100% - 4px);
+  height: calc(100% - 4px); 
+  border-radius: 25px;
+  background-color: var(--secodary-color);
+  z-index: -1;
+  transition: background-color .3s;
+}
+
+nav ul li a:hover span::before { 
+  background-color: transparent; 
+}
+nav ul li a:hover span { 
+  color: var(--white-color); 
+} 
+nav ul li:nth-child(1) a i {
+  transform: rotate(292deg); 
+}
+nav ul li:nth-child(2) a i { 
+  transform: rotate(315deg); 
+}
+nav ul li:nth-child(3) a i { 
+  transform: rotate(337deg);
+}
+nav ul li:nth-child(5) a i { 
+  transform: rotate(22deg);
+}
+nav ul li:nth-child(6) a i { 
+  transform: rotate(45deg);
+}
+nav ul li:nth-child(7) a i { 
+  transform: rotate(67deg);
+}
+
+nav > input:checked ~ ul {
+  visibility: visible;
+}
+
+nav > input:checked ~ ul li {
+  transform: rotate(calc((-180deg / 8) * var(--item))) translateX(0);
+  opacity: 1;  /* Ensure this is set to 1 to make text visible */
+}
+
+nav ul li a span {
+  transform: translateX(0);  /* Ensure the translation is correct */
+  opacity: 1;  /* Set opacity to ensure text is visible */
+  transition: color .3s, transform .3s .4s, opacity .2s .4s;  /* Ensure transition is correct */
+}
+
+nav ul.submenu li {
+  width: 250px; /* Adjust as needed for the new width */
+  height: 100px; /* Adjust as needed for the new height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav ul.submenu li {
+  padding: 20px 30px; /* Increase padding */
+  margin-bottom: 10px; /* Adjust spacing between items */
+}
+
+nav ul li a span {
+  font-size: 20px; /* Increase font size */
+  padding: 0 15px; /* Adjust padding for text */
+}
+
+nav ul li a i {
+  font-size: 28px; /* Increase icon size */
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+}
+
+nav ul li a {
+  transition: all 0.3s; /* Adjust transition for smooth resizing */
+}
+
+
+.theme-toggler {
+  position: fixed;
+  top: 6rem;
+  right: -15rem; /* Start off-screen */
+  background: #333;
+  z-index: 1000;
+  width: 15rem;
+  text-align: center;
+  transition: right 0.5s; /* Smooth slide-in effect */
+}
+
+.theme-toggler.active {
+  right: 0; /* Move into view when active */
+}
+.theme-toggler h3 {
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 2rem;
+}
+.theme-toggler .buttons {
+  display: flex;         /* Flex layout for buttons */
+  justify-content: center; /* Center-align buttons */
+  flex-wrap: wrap;       /* Allow wrapping */
+  gap: 1rem;             /* Space between buttons */
+  padding: 1rem;         /* Padding */
+}
+
+.theme-toggler .theme-btn {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;    /* Circular shape */
+  cursor: pointer;       /* Change cursor on hover */
+  transition: 0.3s;      /* Smooth transition on hover */
+}
+
+.theme-toggler .theme-btn:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.theme-toggler .toggle-btn {
+  position: absolute;
+  top: 0;
+  left: -3.4rem; /* Adjusted to keep the toggler off-screen */
+  padding: 0.5rem 0.7rem; /* Reduced padding */
+  background: #333;
+  cursor: pointer;
+ 
+}
+
+
+.theme-toggler .toggle-btn i {
+  color: #fff;
+  font-size: 2rem;
+  animation: spin 4s linear infinite; /* Spinning animation for the icon */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);  /* Starting position */
+  }
+  100% {
+    transform: rotate(360deg); /* Complete 360-degree rotation */
+  }
+}
+
+
+/* Your existing CSS goes here */
+
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%) scale(0.5); /* Start off-screen and half-size */
+    opacity: 0;                               /* Initially transparent */
+  }
+  100% {
+    transform: translateY(0) scale(1);       /* Final position and full size */
+    opacity: 1;                              /* Fully opaque */
+  }
+}
+
+
+/* CSS for the Popup Message */
+/* CSS for Popup Messages */
+.popup-message {
+  position: absolute;
+  top: 60%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 30px;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  color: var(--theme-color);
+  height: 13cm;
+  width: 21cm;
+  border: 8px solid transparent; /* Initial transparent border */
+  transition: border 0.3s;
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+.popup-message.show {
+  display: block; /* Show when the 'show' class is added */
+  animation: fade-in 1.5s ease-out forwards;/* Apply zoom-out animation */
+  border: 8px solid var(--theme-color); /* Change border color when showing */
+}
+
+.popup-content {
+  display: flex; /* Flex layout for side-by-side arrangement */
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Separate sections with space */
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Section for text */
+.popup-message .left {
+  flex: 1; /* Take up half the width */
+  padding: 1rem; /* Add padding */
+  text-align: left; /* Align text to the left */
+}
+
+/* Section for image */
+.popup-message .right {
+  flex: 1; /* Take up half the width */
+  padding: 1rem; /* Add padding */
+  text-align: center; /* Center-align the image */
+}
+
+/* Image styling */
+.popup-message .right img {
+  max-width: 100%; /* Ensure image doesn't exceed container */
+  border-radius: 10px; /* Round corners */
+}
+
+
+/* Styling for the header */
+
+
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #444;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--theme-color);
+  border-radius: 5rem;
+}
+
+.popup-message .right img{
+  margin-top: 1.8cm;
+  height: 7cm;
+  width: 10cm;
+}
+
+.popup-message .left p{
+  text-align: justify;
+  color: black;
+  }
+  .popup-message .left h2{
+    text-align: center;
+    color: var(--theme-color);
+    }
+  
+
+

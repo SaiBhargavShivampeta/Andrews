@@ -1,0 +1,920 @@
+/* General header styles */
+header {
+  background: rgba(8, 8, 8, 0.4);
+  color: #fff;
+  padding: 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3cm;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s;
+  max-height: 100px;
+}
+
+.hidden-header {
+  top: -100px; /* Adjust based on the header height to hide it completely */
+}
+
+nav2 {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1cm;
+}
+
+.nav2-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.nav2-links a:hover {
+  color: var(--theme-color);
+}
+
+/* CSS for the logos */
+.logo, .right-logo {
+  width: 110px; /* Adjust width as needed */
+  height: 60px;
+}
+
+.logo {
+  margin-left: 1.5cm;
+  height: 4cm;
+  width: 4cm;
+}
+
+.right-logo {
+  margin-right: 1.5cm; /* Add space between the navbar and the right logo */
+}
+
+/* CSS for the menu toggle button */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle i {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  header {
+    flex-direction: row; /* Align elements horizontally */
+    justify-content: space-between; /* Space elements evenly */
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .logo {
+    order: 1; /* Main logo on the left */
+  }
+
+  .right-logo {
+    order: 2; /* Right logo in the middle */
+    flex-grow: 0; /* Prevent the right logo from growing */
+    width: 110px; /* Maintain the same width as main logo */
+    height: 60px; /* Maintain the same height as main logo */
+    margin-right: 1.5cm; /* Adjust margin as needed */
+    text-align: center; /* Center align the right logo */
+  }
+
+  .menu-toggle {
+    order: 3; /* Menu bar on the right */
+    display: block;
+  }
+
+  nav2 {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: rgba(8, 8, 8, 0.4); /* Slightly transparent black */
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  nav2 a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav2.active {
+    display: flex;
+    margin-top: 0cm;
+  }
+}
+
+/* Further adjust for even smaller screens */
+@media (max-width: 480px) {
+  header {
+    flex-direction: row; /* Align elements horizontally */
+    justify-content: space-between; /* Space elements evenly */
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .logo {
+    order: 1; /* Main logo on the left */
+  }
+
+  .right-logo {
+    order: 2; /* Right logo in the middle */
+    flex-grow: 0; /* Prevent the right logo from growing */
+    width: 110px; /* Maintain the same width as main logo */
+    height: 60px; /* Maintain the same height as main logo */
+    margin-right: 1.5cm; /* Adjust margin as needed */
+    text-align: center; /* Center align the right logo */
+  }
+
+  .menu-toggle {
+    order: 3; /* Menu bar on the right */
+    display: block;
+  }
+
+  nav2 {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(8, 8, 8, 0.4); /* Slightly transparent black */
+    position: absolute;
+    top: 100%;
+    left: 0;
+  
+  }
+
+  nav2 a {
+    display: block;
+    margin: 10px 0;
+ 
+  }
+
+  nav2.active {
+    display: flex;
+ 
+  }
+}
+
+/* For smallest screens */
+@media (max-width: 320px) {
+  header {
+    flex-direction: row; /* Align elements horizontally */
+    justify-content: space-between; /* Space elements evenly */
+    padding: 0.5rem; /* Adjust padding for smallest screens */
+  }
+
+  .logo {
+    order: 1; /* Main logo on the left */
+  }
+
+  .right-logo {
+    order: 2; /* Right logo in the middle */
+    flex-grow: 0; /* Prevent the right logo from growing */
+    width: 110px; /* Maintain the same width as main logo */
+    height: 60px; /* Maintain the same height as main logo */
+    margin-right: 1.5cm; /* Adjust margin as needed */
+    text-align: center; /* Center align the right logo */
+  }
+
+  .menu-toggle {
+    order: 3; /* Menu bar on the right */
+    display: block;
+  }
+
+  nav2 {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(8, 8, 8, 0.4); /* Slightly transparent black */
+    position: absolute;
+    top: 100%;
+    left: 0;
+  }
+
+  nav2 a {
+    display: block;
+    margin: 10px 0;
+  }
+
+  nav2.active {
+    display: flex;
+  }
+}
+
+
+:root { 
+  --primary-color: #ff4757; 
+  --secodary-color:rgb(22, 31, 50); 
+  --white-color: #fff; 
+  --theme-color: #3498db;
+} 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+
+* { margin: 0; 
+  padding: 0; 
+} 
+
+*,::before,::after { 
+  box-sizing: border-box; 
+}
+
+
+
+ul { 
+  list-style: none; 
+} 
+
+a { 
+  text-decoration: none; 
+  vertical-align: middle; 
+  color: inherit; 
+} 
+
+body { 
+  font-family: "Poppins", sans-serif;
+  font-size: 16px; 
+  line-height: 1.8; 
+  font-weight: 400; 
+  color: var(--theme-color); 
+  background-color: var(--secodary-color);
+  background-image: url("./images/bgimg.png");
+  background-attachment: fixed;
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-repeat: no-repeat;
+  background-position: center; /* Centers the background image */
+  padding-top: 3.5cm; /* Add padding to top of body to prevent overlap */
+}
+
+
+.site { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 100vh;
+} 
+
+.container { 
+  max-width: 480px; 
+  width: 100%; 
+  padding: 0 2em;
+}
+
+nav { 
+  position: relative; 
+  display: flex; 
+  justify-content: flex-end; 
+  max-width: 480px; 
+  width: 100%; 
+  height: 500px;
+}
+
+nav .link {
+  width: 80px; /* Increase width */
+  height: 70px; /* Increase height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 32%;
+  margin-top: -30px; /* Adjust to keep it vertically centered */
+  left: 0;
+  cursor: pointer;
+  z-index: 99;
+  margin-left: -13cm;
+  transform: rotate(180deg);
+}
+
+nav .link i {
+  font-size: 45px; /* Increase the icon size */
+  transform: rotate(180deg);
+}
+
+
+nav .link::before {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-image: linear-gradient(to left, transparent 25%, var(--theme-color));
+  border-radius: 50% 0 0 50%;
+  transform: scale(2);
+  z-index: -2;
+}
+
+nav .link::after {
+  content: '';
+  position: absolute;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  background-color: black;
+  border-radius: 50% 0 0 50%;
+  transform: scale(2);
+  z-index: -1;
+  opacity: .5;
+  transition: opacity .3s
+}
+
+nav .link:hover::after {
+  opacity: .9;
+}
+
+nav .link .close,
+nav input:checked ~ label .menu {
+  display: none;
+}
+
+nav input:checked ~ label .close {
+  display: block;
+}
+
+nav ul.submenu {
+  position: absolute;
+  top: 116px;
+  right: 22em;
+  width: 500px; /* Increase width as needed */
+  height: 500px; /* Increase height as needed */
+  transform: rotate(90deg);
+  visibility: hidden;
+  transition: visibility .1s;
+  margin-top: 0.5cm;
+
+}
+
+nav > input:checked ~ ul {
+  visibility: inherit;
+}
+
+nav > input:checked ~ ul li {
+  transform: rotate(calc((-180deg / 8) * var(--item))) translateX(0); 
+  opacity: 1;
+} 
+
+nav ul.submenu li { 
+  --item: 1; 
+  position: absolute; 
+  width: 175px; 
+  height: 60px; 
+  transform: rotate(calc((-180deg / 8) * var(--item))) translateX(157px); 
+  transform-origin: right center;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: transform .7s, opacity .2s;
+}
+
+nav ul li:nth-child(2) {
+  --item: 2;
+}
+nav ul li:nth-child(3) { 
+  --item: 3; 
+}
+nav ul li:nth-child(4) { 
+  --item: 4; 
+}
+nav ul li:nth-child(5) {
+  --item: 5; 
+} 
+nav ul li:nth-child(6) {
+  --item: 6;
+}
+nav ul li:nth-child(7) {
+  --item: 7;
+}
+nav ul li:nth-child(8) {
+  --item: 8;
+}
+nav ul li:nth-child(9) {
+  --item: 9;
+}
+nav ul li:nth-child(10) {
+  --item: 10;
+}
+nav ul li:nth-child(11) {
+  --item: 11;
+}
+nav ul li:nth-child(12) {
+  --item: 12;
+}
+nav ul li:nth-child(13) {
+  --item: 13;
+}
+nav ul li:nth-child(14) {
+  --item: 14;
+}
+
+nav ul li a { 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+}
+
+nav ul li a i {
+  font-size: 20px; 
+  width: 36px; 
+  height: 36px; 
+  border-radius: 50%;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  background-color: var(--theme-color); 
+  color: var(--white-color); 
+  border: 2px solid transparent;
+  transition: border .3s, background-color .35 
+}
+
+nav ul li a:hover i { 
+  background-color: transparent; 
+  border-color: var(--theme-color); 
+}
+
+nav ul li a span { 
+  position: absolute;
+  right: calc(100% + 1em); 
+  text-align: right; 
+  font-size: 13px; 
+  padding: 0 10px; 
+  border-radius: 25px; 
+  background-image: linear-gradient(to right, transparent 25%, var(--theme-color)); 
+  z-index: -1; 
+  transform: translateX(50px);
+  opacity: 0;
+  transition: color .3s, transform .3s .4s, opacity .2s .4s;
+
+}
+
+nav > input:checked ~ ul li a span {
+  transform: translateX(0);
+  transform: rotate(174deg);
+}
+
+nav ul li a span::before{
+  content: '';
+  position: absolute; 
+  top: 2px; 
+  left: 2px; 
+  width: calc(100% - 4px);
+  height: calc(100% - 4px); 
+  border-radius: 25px;
+  background-color: var(--secodary-color);
+  z-index: -1;
+  transition: background-color .3s;
+}
+
+nav ul li a:hover span::before { 
+  background-color: transparent; 
+}
+nav ul li a:hover span { 
+  color: var(--white-color); 
+} 
+nav ul li:nth-child(1) a i {
+  transform: rotate(292deg); 
+}
+nav ul li:nth-child(2) a i { 
+  transform: rotate(315deg); 
+}
+nav ul li:nth-child(3) a i { 
+  transform: rotate(337deg);
+}
+nav ul li:nth-child(5) a i { 
+  transform: rotate(22deg);
+}
+nav ul li:nth-child(6) a i { 
+  transform: rotate(45deg);
+}
+nav ul li:nth-child(7) a i { 
+  transform: rotate(67deg);
+}
+
+
+nav > input:checked ~ ul {
+  visibility: visible;
+}
+
+nav > input:checked ~ ul li {
+  transform: rotate(calc((-180deg / 8) * var(--item))) translateX(0);
+  opacity: 1;  /* Ensure this is set to 1 to make text visible */
+}
+
+nav ul li a span {
+  transform: translateX(0);  /* Ensure the translation is correct */
+  opacity: 1;  /* Set opacity to ensure text is visible */
+  transition: color .3s, transform .3s .4s, opacity .2s .4s;  /* Ensure transition is correct */
+}
+
+nav ul.submenu li {
+  width: 250px; /* Adjust as needed for the new width */
+  height: 100px; /* Adjust as needed for the new height */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+nav ul.submenu li {
+  padding: 20px 30px; /* Increase padding */
+  margin-bottom: 10px; /* Adjust spacing between items */
+}
+
+nav ul li a span {
+  font-size: 20px; /* Increase font size */
+  padding: 0 15px; /* Adjust padding for text */
+}
+
+nav ul li a i {
+  font-size: 28px; /* Increase icon size */
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+}
+
+nav ul li a {
+  transition: all 0.3s; /* Adjust transition for smooth resizing */
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 100%; /* Adjust container width */
+    padding: 0 1em; /* Adjust padding */
+  }
+
+  nav .link {
+    width: 60px; /* Adjust width */
+    height: 60px; /* Adjust height */
+    margin-left: -10em; /* Adjust margin */
+    left: 11em; /* Adjust left position */
+  }
+
+  nav ul.submenu {
+    right: 5em; /* Adjust positioning */
+    top: -90px; /* Adjust top position */
+    transform: none; /* Remove rotation */
+  }
+
+  nav ul.submenu li {
+    width: 100%; /* Full width for submenu items */
+    height: auto; /* Auto height for submenu items */
+    transform: none; /* Remove rotation */
+    opacity: 1; /* Ensure submenu items are visible */
+    margin-bottom: 15px; /* Adjust margin between submenu items */
+    padding: 15px 20px; /* Adjust padding */
+  }
+
+  nav ul li a span {
+    font-size: 14px; /* Decrease font size */
+    padding: 0 10px; /* Adjust padding */
+  }
+
+  nav ul li a i {
+    font-size: 18px; /* Decrease icon size */
+    width: 40px; /* Adjust size */
+    height: 40px; /* Adjust size */
+  }
+
+  nav > input:checked ~ ul li {
+    transform: rotate(calc((-110deg / 8)* var(--item))) translateX(0);
+    opacity: 1;
+}
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.5em; /* Further adjust padding */
+  }
+
+  nav .link {
+    width: 50px; /* Adjust width */
+    height: 50px; /* Adjust height */
+    margin-left: -8em; /* Adjust margin */
+    left: 9em; /* Adjust left position */
+    z-index: 999; /* Ensure link is above other elements */
+  }
+
+  nav ul.submenu {
+    right: 19em; /* Further adjust positioning */
+    top: 330px; /* Further adjust top position */
+  }
+
+  nav ul.submenu li {
+    padding: 10px 15px; /* Further adjust padding */
+    margin-bottom: 10px; /* Further adjust margin between items */
+  }
+
+  nav ul li a span {
+    font-size: 12px; /* Further decrease font size */
+    padding: 0 8px; /* Further adjust padding */
+  }
+
+  nav ul li a i {
+    font-size: 16px; /* Further decrease icon size */
+    width: 36px; /* Further adjust size */
+    height: 36px; /* Further adjust size */
+  }
+
+  nav > input:checked ~ ul li {
+    transform: rotate(calc((-160deg / 8)* var(--item))) translateX(0);
+    opacity: 1;
+}
+
+}
+
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.5em; /* Further adjust padding */
+  }
+
+  nav .link {
+    width: 40px; /* Adjust width */
+    height: 40px; /* Adjust height */
+    margin-left: -6em; /* Adjust margin */
+    left: 7em; /* Adjust left position */
+    z-index: 999; /* Ensure link is above other elements */
+  }
+
+  nav ul.submenu {
+    right: 12em; /* Further adjust positioning */
+    top: 170px; /* Further adjust top position */
+  }
+
+  nav ul.submenu li {
+    padding: 10px 15px; /* Further adjust padding */
+    margin-bottom: 10px; /* Further adjust margin between items */
+  }
+
+  nav ul li a span {
+    font-size: 10px; /* Further decrease font size */
+    padding: 0 6px; /* Further adjust padding */
+  }
+
+  nav ul li a i {
+    font-size: 14px; /* Further decrease icon size */
+    width: 30px; /* Further adjust size */
+    height: 30px; /* Further adjust size */
+  }
+
+  nav > input:checked ~ ul li {
+    transform: rotate(calc((-160deg / 8)* var(--item))) translateX(0);
+    opacity: 1;
+}
+}
+
+
+.theme-toggler {
+  position: fixed;
+  top: 7rem;
+ height: 5.3cm;
+ right: -13rem;
+  background: #060827;
+  z-index: 1000;
+  width: 13rem;
+  text-align: center;
+  transition: right 0.5s; /* Smooth slide-in effect */
+}
+
+.theme-toggler.active {
+  right: 0; /* Move into view when active */
+}
+.theme-toggler h3 {
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  height: 1.5cm;
+}
+.theme-toggler .buttons {
+  display: flex;         /* Flex layout for buttons */
+  justify-content: center; /* Center-align buttons */
+  flex-wrap: wrap;       /* Allow wrapping */
+  gap: 1rem;             /* Space between buttons */
+  padding: 1rem;         /* Padding */
+  height: 3.8cm;
+  width: 6cm;
+}
+
+.theme-toggler .theme-btn {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;    /* Circular shape */
+  cursor: pointer;       /* Change cursor on hover */
+  transition: 0.3s;    
+/* Smooth transition on hover */
+}
+
+.theme-toggler .theme-btn:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.theme-toggler .toggle-btn {
+  position: absolute;
+  top: 0;
+  left: -3.4rem; /* Adjusted to keep the toggler off-screen */
+  padding: 0.5rem 0.7rem; /* Reduced padding */
+   background-color: #060827;  
+  cursor: pointer;
+ 
+}
+
+
+.theme-toggler .toggle-btn i {
+  color: #fff;
+  font-size: 2rem;
+  animation: spin 4s linear infinite; /* Spinning animation for the icon */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);  /* Starting position */
+  }
+  100% {
+    transform: rotate(360deg); /* Complete 360-degree rotation */
+  }
+}
+
+
+/* Your existing CSS goes here */
+
+
+@keyframes slide-in {
+  0% {
+    transform: translateY(-100%) scale(0.5); /* Start off-screen and half-size */
+    opacity: 0;                               /* Initially transparent */
+  }
+  100% {
+    transform: translateY(0) scale(1);       /* Final position and full size */
+    opacity: 1;                              /* Fully opaque */
+  }
+}
+
+
+/* CSS for the Popup Message */
+/* CSS for Popup Messages */
+.popup-message {
+  position: absolute;
+  top: 60%;
+  left: 73%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 30px;
+  display: none; /* Initially hidden */
+  z-index: 1000;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1.5rem;
+  color: var(--theme-color);
+  height: 13cm;
+  width: 21cm;
+  border: 8px solid transparent; /* Initial transparent border */
+  transition: border 0.3s;
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+.popup-message.show {
+  display: block; /* Show when the 'show' class is added */
+  animation: fade-in 1.5s ease-out forwards;/* Apply zoom-out animation */
+  border: 8px solid var(--theme-color); /* Change border color when showing */
+}
+
+.popup-content {
+  display: flex; /* Flex layout for side-by-side arrangement */
+  align-items: center; /* Center content vertically */
+  justify-content: space-between; /* Separate sections with space */
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Section for text */
+.popup-message .left {
+  flex: 1; /* Take up half the width */
+  padding: 1rem; /* Add padding */
+  text-align: left; /* Align text to the left */
+}
+
+/* Section for image */
+.popup-message .right {
+  flex: 1; /* Take up half the width */
+  padding: 1rem; /* Add padding */
+  text-align: center; /* Center-align the image */
+}
+
+/* Image styling */
+.popup-message .right img {
+  max-width: 100%; /* Ensure image doesn't exceed container */
+  border-radius: 10px; /* Round corners */
+}
+
+
+html::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: #444;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--theme-color);
+  border-radius: 5rem;
+}
+
+.popup-message .right img{
+  margin-top: 1.8cm;
+  height: 7cm;
+  width: 10cm;
+}
+
+.popup-message .left p{
+  text-align: justify;
+  color: black;
+  }
+  .popup-message .left h2{
+    text-align: center;
+    color: var(--theme-color);
+    }
+  
+    @media (max-width: 1024px) {
+      .popup-message {
+        height: auto; /* Adjust height to fit content */
+        max-width: 80%; /* Limit maximum width */
+        padding: 1rem; /* Decrease padding */
+        font-size: 1.2rem; /* Decrease font size */
+        width: auto; /* Adjust width to fit content */
+        top: 160%;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .popup-message {
+        top: 230%; /* Adjust vertical position */
+        transform: translate(-50%, -50%);
+        height: auto;
+        max-width: 90%;
+        padding: 1rem;
+        font-size: 1rem;
+        width: auto;
+      }
+    
+      .popup-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .popup-message .left,
+      .popup-message .right {
+        padding: 0.5rem;
+      }
+    
+      .popup-message .left h2 {
+        margin-bottom: 0.5rem; /* Add margin bottom */
+      }
+    
+      .popup-message .right img {
+        margin-top: 1rem;
+        height: auto;
+        width: 100%;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .popup-message {
+        top: 160%; /* Adjust vertical position */
+        left: 50%; /* Center horizontally */
+        transform: translate(-50%, -50%);
+        padding: 0.8rem;
+        font-size: 0.9rem;
+        width: 90%; /* Adjust width to fit screen */
+        max-width: 320px; /* Limit maximum width */
+      }
+    
+      .popup-message .popup-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    
+      .popup-message .left h2 {
+        font-size: 1.2rem; /* Increase font size for headings */
+        margin-bottom: 0.5rem; /* Add margin bottom */
+      }
+    
+      .popup-message .right img {
+        margin-top: 1rem; /* Adjust spacing */
+        height: auto; /* Ensure image maintains aspect ratio */
+        max-width: 100%; /* Make sure image fits container */
+      }
+    }
+    
+

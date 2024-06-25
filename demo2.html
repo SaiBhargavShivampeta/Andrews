@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!--Created by Tivotal-->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Organisers | Tivotal</title>
+
+  </head>
+
+<style>
+
+.gallery .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery .box-container .box {
+  position: relative;
+  border: 1rem solid #333;
+  border-radius: 0.5rem;
+  height: 25rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery .box-container .box img {
+  height: 7cm;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gallery .box-container .box:hover img {
+  transform: scale(1.1);
+  filter: grayscale();
+}
+
+.gallery .box-container .box .title {
+  position: absolute;
+  top: -10rem;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.gallery .box-container .box:hover .title {
+  top: 0;
+}
+
+.gallery .swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .gallery .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .gallery .swiper-slide img {
+    width: 100%;
+    max-height: 700px; /* Set a fixed height */
+    object-fit: cover; /* Ensure the image covers the entire area */
+  }
+  
+  /* Ensure the images have consistent aspect ratio */
+  .gallery .swiper-slide img {
+    aspect-ratio: 16 / 9; /* Adjust this ratio as needed */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .gallery .swiper-pagination {
+    position: relative;
+    bottom: 10px;
+  }
+
+</style>
+
+<body>
+
+  <section class="gallery" id="gallery">
+    <h1 class="heading">our <span>gallery</span></h1>
+
+    <div class="swiper-container gallery-slider">
+      <div class="swiper-wrapper">
+        
+
+        <div class="swiper-slide">
+          <img src="images/gallery2.jpg" alt="" />
+        </div>
+      
+        <div class="swiper-slide">
+          <img src="images/gallery3.jpg" alt="" />
+        </div>
+
+        <div class="swiper-slide">
+          <img src="./images/IMG-20170318-WA0004.jpg" alt="" />
+        </div>
+
+        <div class="swiper-slide">
+        <img src="images/IMG-20170317-WA0002.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/gallery6.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/gallery7.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20170317-WA0002.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20170915-WA0007.jpg" alt="" />
+      </div>
+    
+      <div class="swiper-slide">
+        <img src="images/IMG-20171007-WA0012.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20171007-WA0050.jpg" alt="" />
+      </div>
+
+        <div class="swiper-slide">
+          <img src="./images/IMG-20180921-WA0016.jpg" alt="" />
+        </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20180103-WA0018.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20180327-WA0004.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20180823-WA0026.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20180327-WA0008.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20180921-WA0012.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20190520-WA0020.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20190521-WA0033.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/WhatsApp Image 2024-05-29 at 16.33.00_9e1e8c37.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/WhatsApp Image 2024-05-29 at 16.34.01_2635fce9.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/WhatsApp Image 2024-05-29 at 16.34.01_ac1b98ab.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/WhatsApp Image 2024-05-29 at 16.35.04_23c9dcd6.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/WhatsApp Image 2024-05-29 at 16.35.36_96afb382.jpg" alt="" />
+      </div>
+     
+      <div class="swiper-slide">
+        <img src="images/gallery8.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20190520-WA0014.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/IMG-20191110-WA0063.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/gallery11.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/gallery10.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/WhatsApp Image 2024-05-29 at 16.37.49_fdff7ef5.jpg" alt="" />
+      </div>
+
+      <div class="swiper-slide">
+        <img src="images/gallery9.jpg" alt="" />
+      </div>
+
+
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+  
+
+<script>
+
+var gallerySwiper = new Swiper(".gallery-slider", {
+  // Optional parameters
+  loop: true,
+  autoplay: {
+    delay: 3000, // Delay between slides in milliseconds
+  },
+  // Display two slides at a time
+  slidesPerView: 2,
+  // If we need pagination
+
+  spaceBetween: 10,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+let slideIndex = 0;
+let slideInterval;
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("slide");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    slideInterval = setTimeout(showSlides, 6000); // Change image every 3 seconds
+}
+
+function changeSlide(n) {
+    clearTimeout(slideInterval);
+    showSlides(slideIndex += n - 1);
+    slideIndex--;
+    showSlides();
+}
+
+function currentSlide(n) {
+    clearTimeout(slideInterval);
+    showSlides(slideIndex = n - 1);
+    slideIndex--;
+    showSlides();
+}
+
+showSlides();
+
+</script>
+
+</body>
+</html>
